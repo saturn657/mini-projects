@@ -15,7 +15,7 @@ function generatePalette(){
         card.querySelector("span").textContent=color;
     });
 
-    document.body.style.background=`linear-gradient(135deg,${colors[0]},${colors[4]})`;
+    document.body.style.background=`linear-gradient(135deg,${colors.join(",")})`;
 }
 
 button.addEventListener("click",generatePalette);
