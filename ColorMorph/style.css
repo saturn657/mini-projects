@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.app{
+    width:90%;
+    max-width:900px;
+    padding:40px;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+}
+
+h1{
+    font-size:3rem;
+    color:white;
+    margin-bottom:10px;
+}
+
+p{
+    color:#eee;
+    margin-bottom:30px;
+}
+
+.palette{
+    display:flex;
+    height:250px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.color-card{
+    flex:1;
+}
+
+button{
+    border:0;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    background:white;
+}
