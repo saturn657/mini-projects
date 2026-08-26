@@ -5,8 +5,23 @@ function randomColor(){
     return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,"0");
 }
 
-button.addEventListener("click",()=>{
+function generatePalette(){
     cards.forEach(card=>{
-        card.style.backgroundColor=randomColor();
+        const color=randomColor();
+        card.style.backgroundColor=color;
+        card.querySelector("span").textContent=color;
+    });
+}
+
+button.addEventListener("click",generatePalette);
+
+cards.forEach(card=>{
+    card.addEventListener("click",async()=>{
+        const color=card.querySelector("span").textContent;
+        await navigator.clipboard.writeText(color);
+        card.querySelector("span").textContent="Copied!";
+        setTimeout(()=>{
+            card.querySelector("span").textContent=color;
+        },800);
     });
 });
