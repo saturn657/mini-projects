@@ -19,7 +19,15 @@ button:hover{
 }
 
 button{
-    transition:transform 0.2s;
+    border:0;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    background:white;
+    color:#333;
+    transition:all 0.2s;
 }
 
 .app{
@@ -83,4 +91,46 @@ button{
     background:rgba(0,0,0,0.25);
     color:white;
     font-weight:bold;
+}
+.app{
+    box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+.color-card span{
+    font-size:0.9rem;
+    user-select:none;
+}
+
+button:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+button:active{
+    transform:scale(0.96);
+}
+
+@media(max-width:700px){
+    .app{
+        padding:25px;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .palette{
+        height:180px;
+    }
+
+    .color-card span{
+        font-size:0.7rem;
+        padding:6px;
+    }
+}
+
+@media(max-width:500px){
+    .palette{
+        flex-direction:column;
+        height:400px;
+    }
 }
