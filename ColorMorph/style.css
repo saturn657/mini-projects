@@ -11,6 +11,15 @@ body{
     align-items:center;
     font-family:Arial,sans-serif;
     background:linear-gradient(135deg,#667eea,#764ba2);
+    transition:background 0.8s ease;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+button{
+    transition:transform 0.2s;
 }
 
 .app{
