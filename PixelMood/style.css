@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.app{
+    width:90%;
+    max-width:700px;
+    padding:45px;
+    text-align:center;
+    border-radius:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:white;
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.app>p{
+    color:#eee;
+    margin-bottom:35px;
+}
+
+.moods{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.moods button{
+    width:65px;
+    height:65px;
+    border:0;
+    border-radius:20px;
+    font-size:2rem;
+    cursor:pointer;
+    background:rgba(255,255,255,0.8);
+}
+
+.mood-display{
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+}
+
+.mood-display span{
+    font-size:4rem;
+}
+
+.mood-display h2{
+    margin:15px 0 10px;
+}
+
+.mood-display p{
+    color:#eee;
+}
