@@ -70,3 +70,39 @@ h1{
 .mood-display p{
     color:#eee;
 }
+
+body{
+    transition:background 0.8s ease;
+}
+
+.mood-display{
+    transition:transform 0.4s ease,opacity 0.4s ease;
+}
+
+.moods button{
+    transition:transform 0.2s ease,box-shadow 0.2s ease;
+}
+
+.moods button:hover{
+    transform:translateY(-6px) scale(1.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.moods button:active{
+    transform:scale(0.95);
+}
+
+.mood-display.active{
+    animation:moodPop 0.5s ease;
+}
+
+@keyframes moodPop{
+    0%{
+        transform:scale(0.94);
+        opacity:0.5;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}

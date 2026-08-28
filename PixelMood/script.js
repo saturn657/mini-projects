@@ -33,6 +33,10 @@ moods.forEach(button=>{
     button.addEventListener("click",()=>{
         const mood=moodData[button.textContent];
 
+        display.classList.remove("active");
+        void display.offsetWidth;
+        display.classList.add("active");
+
         display.querySelector("span").textContent=button.textContent;
         display.querySelector("h2").textContent=mood.title;
         display.querySelector("p").textContent=mood.message;
