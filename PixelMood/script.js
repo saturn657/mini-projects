@@ -31,6 +31,9 @@ const moodData={
 
 moods.forEach(button=>{
     button.addEventListener("click",()=>{
+        moods.forEach(btn=>btn.classList.remove("active"));
+        button.classList.add("active");
+
         const mood=moodData[button.textContent];
 
         display.classList.remove("active");
