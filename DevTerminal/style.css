@@ -108,3 +108,16 @@ body{
         align-items:flex-start;
     }
 }
+
+.output{
+    margin-top:20px;
+    line-height:1.7;
+}
+
+.output p:first-child{
+    color:#aaa;
+}
+
+.output p:last-child{
+    color:#ddd;
+}
