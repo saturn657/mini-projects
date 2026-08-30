@@ -8,10 +8,34 @@ const commands={
     projects:"ColorMorph • PixelMood • DevTerminal"
 };
 
+let history=[];
+let historyIndex=-1;
+
 input.addEventListener("keydown",e=>{
+    if(e.key==="ArrowUp"){
+        if(history.length===0) return;
+
+        historyIndex=Math.max(0,historyIndex-1);
+        input.value=history[historyIndex];
+        return;
+    }
+
+    if(e.key==="ArrowDown"){
+        if(history.length===0) return;
+
+        historyIndex=Math.min(history.length,historyIndex+1);
+        input.value=historyIndex===history.length?"":history[historyIndex];
+        return;
+    }
+
     if(e.key!=="Enter") return;
 
     const command=input.value.trim().toLowerCase();
+
+    if(!command) return;
+
+    history.push(command);
+    historyIndex=history.length;
 
     if(command==="clear"){
         terminalBody.innerHTML="";
