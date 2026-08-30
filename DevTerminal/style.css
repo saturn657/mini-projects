@@ -141,3 +141,26 @@ body{
     }
 }
 
+.terminal-body{
+    overflow-y:auto;
+    scrollbar-width:thin;
+}
+
+.output p:last-child{
+    line-height:1.6;
+}
+
+@media(max-width:400px){
+    .terminal{
+        height:90vh;
+    }
+
+    .command-line{
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .command-line input{
+        width:100%;
+    }
+}

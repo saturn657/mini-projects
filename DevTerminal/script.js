@@ -19,10 +19,12 @@ const input=document.querySelector(".command-line input");
 const terminalBody=document.querySelector(".terminal-body");
 
 const commands={
-    help:"Available commands: help, about, skills, projects, clear",
+    help:"Available commands: help, about, skills, projects, whoami, date, clear",
     about:"I am a CSE student building things on the web.",
     skills:"HTML • CSS • JavaScript • React • Node.js • C++",
-    projects:"ColorMorph • PixelMood • DevTerminal"
+    projects:"ColorMorph • PixelMood • DevTerminal",
+    whoami:"dev@portfolio",
+    date:new Date().toString()
 };
 
 let history=[];
@@ -64,6 +66,7 @@ input.addEventListener("keydown",e=>{
             <p>${commands[command]||"Command not found. Type 'help'."}</p>
         `;
         terminalBody.appendChild(output);
+        terminalBody.scrollTop=terminalBody.scrollHeight;
     }
 
     input.value="";
