@@ -1,3 +1,20 @@
+const welcome=document.querySelector(".welcome h1");
+const text=welcome.textContent;
+
+welcome.textContent="";
+
+let i=0;
+
+function typeWelcome(){
+    if(i<text.length){
+        welcome.textContent+=text[i];
+        i++;
+        setTimeout(typeWelcome,50);
+    }
+}
+
+typeWelcome();
+
 const input=document.querySelector(".command-line input");
 const terminalBody=document.querySelector(".terminal-body");
 

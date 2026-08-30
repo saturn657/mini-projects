@@ -121,3 +121,23 @@ body{
 .output p:last-child{
     color:#ddd;
 }
+
+.command-line input{
+    caret-color:white;
+}
+
+.output{
+    animation:showOutput 0.25s ease;
+}
+
+@keyframes showOutput{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
