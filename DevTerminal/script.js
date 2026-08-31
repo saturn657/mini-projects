@@ -15,7 +15,7 @@ function typeWelcome(){
 
 typeWelcome();
 
-const input=document.querySelector(".command-line input");
+let input=document.querySelector(".command-line input");
 const terminalBody=document.querySelector(".terminal-body");
 
 const commands={
@@ -57,8 +57,20 @@ input.addEventListener("keydown",e=>{
     historyIndex=history.length;
 
     if(command==="clear"){
-        terminalBody.innerHTML="";
-    }else{
+    terminalBody.innerHTML=`
+        <div class="welcome">
+            <h1>DevTerminal</h1>
+            <p>Type <span>help</span> to see available commands.</p>
+        </div>
+        <div class="command-line">
+            <span>dev@portfolio:~$</span>
+            <input type="text" autofocus>
+        </div>
+    `;
+
+    input=terminalBody.querySelector("input");
+    input.focus();
+}else{
         const output=document.createElement("div");
         output.className="output";
         output.innerHTML=`
