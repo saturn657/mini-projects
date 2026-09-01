@@ -1,0 +1,266 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(to bottom,#17164b 0%,#5d277d 35%,#e85d75 65%,#ffb36b 100%);
+}
+
+.sun{
+    position:absolute;
+    width:170px;
+    height:170px;
+    left:50%;
+    top:35%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:radial-gradient(circle,#fff5b7 0%,#ffd166 45%,#ff8c61 100%);
+    box-shadow:0 0 80px rgba(255,200,100,0.8);
+}
+
+.moon{
+    position:absolute;
+    width:55px;
+    height:55px;
+    top:10%;
+    right:12%;
+    border-radius:50%;
+    background:#fff8d6;
+    opacity:.85;
+    box-shadow:0 0 30px rgba(255,255,220,.5);
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    opacity:.7;
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#fff 1px,transparent 2px),
+        radial-gradient(circle,#fff 1px,transparent 2px);
+    background-size:130px 110px,190px 160px,250px 190px;
+    background-position:20px 20px,70px 40px,120px 10px;
+}
+
+.cloud{
+    position:absolute;
+    width:170px;
+    height:45px;
+    border-radius:50px;
+    background:rgba(255,190,180,.18);
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:inherit;
+}
+
+.cloud::before{
+    width:70px;
+    height:70px;
+    left:25px;
+    bottom:5px;
+}
+
+.cloud::after{
+    width:90px;
+    height:90px;
+    right:20px;
+    bottom:0;
+}
+
+.cloud-one{
+    top:22%;
+    left:8%;
+}
+
+.cloud-two{
+    top:30%;
+    right:4%;
+    transform:scale(.7);
+}
+
+.mountain{
+    position:absolute;
+    bottom:29%;
+    width:0;
+    height:0;
+    border-left:260px solid transparent;
+    border-right:260px solid transparent;
+    border-bottom:300px solid;
+}
+
+.mountain-back{
+    left:-8%;
+    border-bottom-color:#35265c;
+}
+
+.mountain-front{
+    right:-10%;
+    transform:scale(1.1);
+    border-bottom-color:#241c46;
+}
+
+.ocean{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:32%;
+    background:linear-gradient(to bottom,#211c49,#12142e);
+}
+
+.wave{
+    position:absolute;
+    width:140%;
+    height:100px;
+    left:-20%;
+    border-radius:50%;
+    border-top:2px solid rgba(255,180,160,.4);
+}
+
+.wave-one{
+    top:15%;
+    animation:wave 6s ease-in-out infinite;
+}
+
+.wave-two{
+    top:45%;
+    opacity:.6;
+    animation:wave 8s ease-in-out infinite reverse;
+}
+
+.wave-three{
+    top:75%;
+    opacity:.35;
+    animation:wave 10s ease-in-out infinite;
+}
+
+@keyframes wave{
+    0%,100%{
+        transform:translateX(-3%);
+    }
+    50%{
+        transform:translateX(3%);
+    }
+}
+
+.island{
+    position:absolute;
+    bottom:23%;
+    left:50%;
+    width:300px;
+    height:55px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:#111329;
+}
+
+.palm{
+    position:absolute;
+    bottom:25%;
+    left:52%;
+    width:100px;
+    height:210px;
+}
+
+.trunk{
+    position:absolute;
+    bottom:0;
+    left:47px;
+    width:12px;
+    height:175px;
+    border-radius:10px;
+    background:#101226;
+    transform:rotate(7deg);
+}
+
+.leaf{
+    position:absolute;
+    left:45px;
+    top:15px;
+    width:85px;
+    height:20px;
+    border-radius:100% 0;
+    background:#101226;
+    transform-origin:left center;
+}
+
+.leaf-one{
+    transform:rotate(-20deg);
+}
+
+.leaf-two{
+    transform:rotate(20deg);
+}
+
+.leaf-three{
+    transform:rotate(55deg);
+}
+
+.leaf-four{
+    transform:rotate(-55deg);
+}
+
+.leaf-five{
+    transform:rotate(90deg);
+}
+
+.caption{
+    position:absolute;
+    left:50%;
+    bottom:7%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:white;
+    z-index:5;
+}
+
+.caption h1{
+    font-size:clamp(2rem,5vw,4rem);
+    letter-spacing:4px;
+    text-shadow:0 5px 25px rgba(0,0,0,.4);
+}
+
+.caption p{
+    margin-top:10px;
+    color:#f5d8d8;
+    font-size:clamp(.8rem,2vw,1rem);
+}
+
+@media(max-width:600px){
+    .sun{
+        width:120px;
+        height:120px;
+    }
+
+    .mountain{
+        border-left-width:180px;
+        border-right-width:180px;
+        border-bottom-width:220px;
+    }
+
+    .island{
+        width:220px;
+    }
+
+    .palm{
+        left:55%;
+        transform:scale(.8);
+        transform-origin:bottom;
+    }
+}
