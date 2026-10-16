@@ -425,3 +425,86 @@ footer{
         transition:none!important;
     }
 }
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+    background:
+        linear-gradient(120deg,rgba(5,12,35,.72),rgba(10,15,40,.35)),
+        url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90') center/cover no-repeat;
+}
+
+.orb{
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    filter:blur(85px);
+    opacity:.45;
+    pointer-events:none;
+    animation:float 12s ease-in-out infinite alternate;
+}
+
+.orb-one{
+    background:#895cff;
+    top:12%;
+    left:5%;
+}
+
+.orb-two{
+    background:#ff69c9;
+    top:38%;
+    right:8%;
+    animation-delay:-4s;
+}
+
+.orb-three{
+    background:#3d8bff;
+    bottom:0;
+    left:38%;
+    animation-delay:-7s;
+}
+
+@keyframes float{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+    50%{
+        transform:translate(45px,-35px) scale(1.12);
+    }
+    100%{
+        transform:translate(-25px,40px) scale(.92);
+    }
+}
+
+.destination{
+    animation:cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    0%,100%{
+        transform:translateY(0) rotate(1deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(-.5deg);
+    }
+}
+
+.glass{
+    transition:background .35s ease,border-color .35s ease;
+}
+
+.feature-card:hover,
+.navbar:hover{
+    background:rgba(255,255,255,.13);
+    border-color:rgba(255,255,255,.35);
+}
+
+@media(prefers-reduced-motion:reduce){
+    .orb,
+    .destination{
+        animation:none;
+    }
+}
