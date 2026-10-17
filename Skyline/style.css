@@ -508,3 +508,79 @@ footer{
         animation:none;
     }
 }
+
+/* Glass reflection effect */
+
+.glass{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.glass::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.04),
+        transparent
+    );
+    transform:skewX(-20deg);
+    transition:left .8s ease;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.glass:hover::before{
+    left:150%;
+}
+
+.feature-card{
+    border:1px solid rgba(255,255,255,.2);
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.15);
+    border-color:rgba(210,190,255,.65);
+    box-shadow:0 15px 40px rgba(120,100,255,.16);
+}
+
+.primary-button{
+    position:relative;
+    overflow:hidden;
+}
+
+.primary-button::after{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-100%;
+    width:50%;
+    height:200%;
+    background:rgba(255,255,255,.3);
+    transform:rotate(25deg);
+    transition:left .6s ease;
+}
+
+.primary-button:hover::after{
+    left:150%;
+}
+
+@media(prefers-reduced-motion:reduce){
+    .glass::before,
+    .primary-button::after{
+        transition:none;
+    }
+}
