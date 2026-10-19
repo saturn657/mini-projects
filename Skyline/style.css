@@ -745,3 +745,70 @@ footer{
         font-size:10px;
     }
 }
+
+/* Theme toggle */
+
+.theme-toggle{
+    padding:10px 14px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    font:inherit;
+    font-size:12px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .3s,transform .3s;
+}
+
+.theme-toggle:hover{
+    background:rgba(255,255,255,.23);
+    transform:translateY(-2px);
+}
+
+body.light-theme{
+    color:#17213b;
+    background:#e9efff;
+}
+
+body.light-theme .background{
+    background:
+        linear-gradient(120deg,rgba(215,225,255,.65),rgba(255,225,246,.45)),
+        url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90') center/cover no-repeat;
+}
+
+body.light-theme .glass{
+    background:rgba(255,255,255,.35);
+    border-color:rgba(255,255,255,.65);
+    box-shadow:0 8px 32px rgba(40,50,100,.12);
+}
+
+body.light-theme .nav-links a,
+body.light-theme .nav-button,
+body.light-theme .hero-content>p,
+body.light-theme .destination-info p,
+body.light-theme .destination-footer,
+body.light-theme .stats p,
+body.light-theme .feature-card p,
+body.light-theme footer{
+    color:#394663;
+}
+
+body.light-theme .secondary-button{
+    color:#17213b;
+    border-color:rgba(50,60,100,.3);
+}
+
+body.light-theme .feature-card a{
+    color:#6244ad;
+}
+
+body.light-theme .theme-toggle{
+    color:#17213b;
+    background:rgba(255,255,255,.55);
+    border-color:rgba(50,60,100,.2);
+}
+
+body.light-theme .location{
+    color:white;
+}

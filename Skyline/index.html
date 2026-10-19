@@ -1,122 +1,132 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skyline | Explore Beyond</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-<div class="background">
-    <div class="orb orb-one"></div>
-    <div class="orb orb-two"></div>
-    <div class="orb orb-three"></div>
-</div>
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="orb orb-three"></div>
+    </div>
 
     <div class="container">
-        <nav class="navbar glass">
-            <a href="#" class="logo">🌌 Skyline</a>
+      <nav class="navbar glass">
+        <a href="#" class="logo">🌌 Skyline</a>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#contact">Contact</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a href="#features" class="nav-button">Explore ↗</a>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Switch color theme"
+        >
+          ☀️ Light
+        </button>
+      </nav>
+
+      <main id="home" class="hero">
+        <section class="hero-content">
+          <span class="tag">✦ YOUR NEXT ADVENTURE</span>
+
+          <h1>Explore the world.<br />Feel the <span>magic.</span></h1>
+
+          <p>
+            Discover beautiful places, chase unforgettable sunsets, and find
+            your own little corner of paradise.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#features" class="primary-button">Explore Now ↗</a>
+            <a href="#about" class="secondary-button">Discover More</a>
+          </div>
+
+          <div class="stats glass">
+            <div>
+              <h2>120+</h2>
+              <p>Destinations</p>
             </div>
-
-            <a href="#features" class="nav-button">Explore ↗</a>
-        </nav>
-
-        <main id="home" class="hero">
-            <section class="hero-content">
-                <span class="tag">✦ YOUR NEXT ADVENTURE</span>
-
-                <h1>Explore the world.<br>Feel the <span>magic.</span></h1>
-
-                <p>
-                    Discover beautiful places, chase unforgettable sunsets,
-                    and find your own little corner of paradise.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#features" class="primary-button">Explore Now ↗</a>
-                    <a href="#about" class="secondary-button">Discover More</a>
-                </div>
-
-                <div class="stats glass">
-                    <div>
-                        <h2>120+</h2>
-                        <p>Destinations</p>
-                    </div>
-                    <div>
-                        <h2>15k</h2>
-                        <p>Happy Travellers</p>
-                    </div>
-                    <div>
-                        <h2>4.9★</h2>
-                        <p>Average Rating</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="destination glass">
-                <div class="destination-image">
-                    <span class="location">📍 Swiss Alps</span>
-                </div>
-
-                <div class="destination-info">
-                    <div>
-                        <h2>Lost in the mountains</h2>
-                        <p>Sometimes, the best therapy is a new horizon.</p>
-                    </div>
-                    <span class="heart">♡</span>
-                </div>
-
-                <div class="destination-footer">
-                    <span>✦ Nature's masterpiece</span>
-                    <span>01 / 04</span>
-                </div>
-            </section>
-        </main>
-
-        <section id="features" class="features">
-            <article class="feature-card glass">
-                <div class="feature-icon purple">⌁</div>
-                <h3>Find Your Escape</h3>
-                <p>From peaceful beaches to breathtaking mountain peaks.</p>
-                <a href="#contact">Explore places ↗</a>
-            </article>
-
-            <article class="feature-card glass">
-                <div class="feature-icon blue">✧</div>
-                <h3>Plan Your Journey</h3>
-                <p>Turn your dream destinations into real adventures.</p>
-                <a href="#contact">Start planning ↗</a>
-            </article>
-
-            <article class="feature-card glass">
-                <div class="feature-icon pink">♡</div>
-                <h3>Collect Memories</h3>
-                <p>Make every sunset a story worth remembering.</p>
-                <a href="#contact">Get inspired ↗</a>
-            </article>
-
-            <article class="feature-card glass">
-                <div class="feature-icon green">✺</div>
-                <h3>Travel Together</h3>
-                <p>Share the journey with people who love exploring.</p>
-                <a href="#contact">Join the journey ↗</a>
-            </article>
+            <div>
+              <h2>15k</h2>
+              <p>Happy Travellers</p>
+            </div>
+            <div>
+              <h2>4.9★</h2>
+              <p>Average Rating</p>
+            </div>
+          </div>
         </section>
 
-        <footer id="contact">
-            <p>Made for dreamers. ✦ Explore · Dream · Discover</p>
-        </footer>
+        <section id="about" class="destination glass">
+          <div class="destination-image">
+            <span class="location">📍 Swiss Alps</span>
+          </div>
+
+          <div class="destination-info">
+            <div>
+              <h2>Lost in the mountains</h2>
+              <p>Sometimes, the best therapy is a new horizon.</p>
+            </div>
+            <span class="heart">♡</span>
+          </div>
+
+          <div class="destination-footer">
+            <span>✦ Nature's masterpiece</span>
+            <span>01 / 04</span>
+          </div>
+        </section>
+      </main>
+
+      <section id="features" class="features">
+        <article class="feature-card glass">
+          <div class="feature-icon purple">⌁</div>
+          <h3>Find Your Escape</h3>
+          <p>From peaceful beaches to breathtaking mountain peaks.</p>
+          <a href="#contact">Explore places ↗</a>
+        </article>
+
+        <article class="feature-card glass">
+          <div class="feature-icon blue">✧</div>
+          <h3>Plan Your Journey</h3>
+          <p>Turn your dream destinations into real adventures.</p>
+          <a href="#contact">Start planning ↗</a>
+        </article>
+
+        <article class="feature-card glass">
+          <div class="feature-icon pink">♡</div>
+          <h3>Collect Memories</h3>
+          <p>Make every sunset a story worth remembering.</p>
+          <a href="#contact">Get inspired ↗</a>
+        </article>
+
+        <article class="feature-card glass">
+          <div class="feature-icon green">✺</div>
+          <h3>Travel Together</h3>
+          <p>Share the journey with people who love exploring.</p>
+          <a href="#contact">Join the journey ↗</a>
+        </article>
+      </section>
+
+      <footer id="contact">
+        <p>Made for dreamers. ✦ Explore · Dream · Discover</p>
+      </footer>
     </div>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
