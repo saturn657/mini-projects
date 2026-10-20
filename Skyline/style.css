@@ -812,3 +812,32 @@ body.light-theme .theme-toggle{
 body.light-theme .location{
     color:white;
 }
+
+/* Immersive destination card */
+.destination{
+    border:1px solid rgba(255,255,255,.2);
+    transition:border-color .35s ease,box-shadow .35s ease;
+}
+.destination-image{
+    background-size:100% 100%;
+    transition:background-size .7s ease,filter .7s ease;
+}
+.destination:hover{
+    border-color:rgba(190,175,255,.8);
+    box-shadow:0 20px 60px rgba(100,80,255,.25);
+}
+.destination:hover .destination-image{
+    background-size:110% 110%;
+    filter:saturate(1.2);
+}
+.destination-info h3{
+    transition:letter-spacing .35s ease;
+}
+.destination:hover .destination-info h3{
+    letter-spacing:1px;
+}
+@media(prefers-reduced-motion:reduce){
+    .destination,.destination-image,.destination-info h3{
+        transition:none;
+    }
+}
