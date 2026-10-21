@@ -28,3 +28,27 @@ themeToggle.addEventListener("click",()=>{
 
     updateThemeButton()
 })
+
+const favoriteButton=document.getElementById("favoriteButton")
+
+if(favoriteButton){
+    const isSaved=localStorage.getItem("skyline-favorite")==="true"
+
+    function updateFavorite(){
+        const active=favoriteButton.classList.contains("active")
+        favoriteButton.innerHTML=active?"♥ <span>Saved</span>":"♡ <span>Save</span>"
+        favoriteButton.setAttribute("aria-label",active?"Remove from favourites":"Add destination to favourites")
+    }
+
+    if(isSaved){
+        favoriteButton.classList.add("active")
+    }
+
+    updateFavorite()
+
+    favoriteButton.addEventListener("click",()=>{
+        favoriteButton.classList.toggle("active")
+        localStorage.setItem("skyline-favorite",favoriteButton.classList.contains("active"))
+        updateFavorite()
+    })
+}

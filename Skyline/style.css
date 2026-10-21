@@ -841,3 +841,29 @@ body.light-theme .location{
         transition:none;
     }
 }
+
+/* Destination favourite button */
+.favorite-button{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:9px 14px;
+    margin-top:12px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:inherit;
+    font:inherit;
+    font-size:13px;
+    cursor:pointer;
+    transition:background .3s,transform .3s,border-color .3s;
+}
+.favorite-button:hover{
+    background:rgba(255,255,255,.2);
+    transform:scale(1.05);
+}
+.favorite-button.active{
+    background:rgba(255,100,140,.2);
+    border-color:rgba(255,130,160,.8);
+    color:#ff8ba7;
+}
