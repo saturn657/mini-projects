@@ -207,3 +207,29 @@ footer span{
     .editor-header{padding:16px}
     .toolbar{padding:16px;flex-wrap:wrap}
 }
+
+.pixel-canvas{
+    display:grid;
+    grid-template-columns:repeat(32,minmax(0,1fr));
+    grid-template-rows:repeat(32,minmax(0,1fr));
+    gap:1px;
+    width:min(100%,512px);
+    aspect-ratio:1;
+    padding:5px;
+    background:#24242d;
+    border:1px solid #383844;
+    border-radius:5px;
+    overflow:hidden;
+    touch-action:none;
+    cursor:crosshair;
+}
+.pixel{
+    min-width:0;
+    min-height:0;
+    background:#1c1c24;
+    border-radius:1px;
+    transition:background-color .08s;
+}
+.pixel:hover{
+    outline:1px solid rgba(255,255,255,.25);
+}
