@@ -38,3 +38,30 @@ canvas.addEventListener("pointerup",()=>{
 canvas.addEventListener("pointercancel",()=>{
     drawing=false
 })
+
+const palette=document.getElementById("palette")
+const selectedHex=document.getElementById("selectedHex")
+const customColor=document.getElementById("customColor")
+
+function selectColor(color,button=null){
+    currentColor=color
+    selectedHex.textContent=color.toUpperCase()
+
+    document.querySelectorAll(".swatch").forEach(swatch=>{
+        swatch.classList.remove("active")
+    })
+
+    if(button){
+        button.classList.add("active")
+    }
+}
+
+palette.addEventListener("click",(e)=>{
+    const button=e.target.closest(".swatch")
+    if(!button)return
+    selectColor(button.dataset.color,button)
+})
+
+customColor.addEventListener("input",()=>{
+    selectColor(customColor.value)
+})

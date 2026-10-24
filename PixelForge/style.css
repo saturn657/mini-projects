@@ -233,3 +233,62 @@ footer span{
 .pixel:hover{
     outline:1px solid rgba(255,255,255,.25);
 }
+
+.palette-heading{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.selected-label{
+    color:var(--muted);
+    font-family:'DM Mono',monospace;
+    font-size:9px;
+}
+#selectedHex{
+    color:var(--text);
+    margin-left:5px;
+}
+.palette{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.swatch,.custom-swatch{
+    width:29px;
+    height:29px;
+    border-radius:9px;
+    border:2px solid rgba(255,255,255,.16);
+    background:var(--swatch);
+    cursor:pointer;
+    transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.swatch:hover,.custom-swatch:hover{
+    transform:translateY(-3px);
+}
+.swatch.active{
+    border-color:white;
+    box-shadow:0 0 0 3px rgba(161,138,255,.4);
+    transform:scale(1.1);
+}
+.custom-swatch{
+    position:relative;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#ff6584,#8b7cff,#70e1d1);
+    color:white;
+    font-size:21px;
+    font-weight:600;
+}
+.custom-swatch input{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor:pointer;
+}
+@media(max-width:600px){
+    .palette{justify-content:flex-start}
+}

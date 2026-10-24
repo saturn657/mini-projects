@@ -1,54 +1,104 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PixelForge | Pixel Art Studio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="navbar">
-        <a href="#" class="logo"><span>▦</span> PixelForge</a>
-        <span class="status"><span class="status-dot"></span> CREATIVE MODE</span>
+      <a href="#" class="logo"><span>▦</span> PixelForge</a>
+      <span class="status"><span class="status-dot"></span> CREATIVE MODE</span>
     </header>
 
     <main class="studio">
-        <section class="intro">
-            <p class="eyebrow">YOUR PIXEL ART PLAYGROUND</p>
-            <h1>Small pixels.<br><span>Big imagination.</span></h1>
-            <p class="subtitle">Turn a blank canvas into something extraordinary.</p>
-        </section>
+      <section class="intro">
+        <p class="eyebrow">YOUR PIXEL ART PLAYGROUND</p>
+        <h1>Small pixels.<br /><span>Big imagination.</span></h1>
+        <p class="subtitle">
+          Turn a blank canvas into something extraordinary.
+        </p>
+      </section>
 
-        <section class="editor">
-            <div class="editor-header">
-                <div>
-                    <span class="live-dot"></span>
-                    <strong>Untitled Artwork</strong>
-                </div>
-                <span class="canvas-label">32 × 32 CANVAS</span>
-            </div>
+      <section class="editor">
+        <div class="editor-header">
+          <div>
+            <span class="live-dot"></span>
+            <strong>Untitled Artwork</strong>
+          </div>
+          <span class="canvas-label">32 × 32 CANVAS</span>
+        </div>
 
-            <div class="canvas-area">
-                <div class="pixel-canvas" id="pixelCanvas">
-                </div>
-            </div>
+        <div class="canvas-area">
+          <div class="pixel-canvas" id="pixelCanvas"></div>
+        </div>
 
-            <div class="toolbar">
-                <span>YOUR COLOURS</span>
-                <div class="palette-preview">
-                    <span style="background:#ff6584"></span>
-                    <span style="background:#ffbd69"></span>
-                    <span style="background:#f9f871"></span>
-                    <span style="background:#70e1d1"></span>
-                    <span style="background:#8b7cff"></span>
-                    <span style="background:#ffffff"></span>
-                </div>
-            </div>
-        </section>
+        <div class="toolbar">
+          <div class="palette-heading">
+            <span>YOUR COLOURS</span>
+            <span class="selected-label"
+              >SELECTED <span id="selectedHex">#FF6584</span></span
+            >
+          </div>
+          <div class="palette" id="palette">
+            <button
+              class="swatch active"
+              data-color="#ff6584"
+              style="--swatch: #ff6584"
+              aria-label="Pink"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#ffbd69"
+              style="--swatch: #ffbd69"
+              aria-label="Orange"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#f9f871"
+              style="--swatch: #f9f871"
+              aria-label="Yellow"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#70e1d1"
+              style="--swatch: #70e1d1"
+              aria-label="Mint"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#8b7cff"
+              style="--swatch: #8b7cff"
+              aria-label="Purple"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#ffffff"
+              style="--swatch: #ffffff"
+              aria-label="White"
+            ></button>
+            <button
+              class="swatch"
+              data-color="#111111"
+              style="--swatch: #111111"
+              aria-label="Black"
+            ></button>
+            <label class="custom-swatch" title="Choose a custom colour">
+              <span>+</span>
+              <input
+                type="color"
+                id="customColor"
+                value="#ff6584"
+                aria-label="Choose custom colour"
+              />
+            </label>
+          </div>
+        </div>
+      </section>
 
-        <footer>MADE FOR THE LOVE OF CREATING <span>✦</span></footer>
+      <footer>MADE FOR THE LOVE OF CREATING <span>✦</span></footer>
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
