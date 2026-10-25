@@ -292,3 +292,38 @@ footer span{
 @media(max-width:600px){
     .palette{justify-content:flex-start}
 }
+.editor-header{
+    gap:12px;
+    flex-wrap:wrap;
+}
+.editor-actions{
+    display:flex;
+    gap:8px;
+    margin-left:auto;
+}
+.tool-button{
+    padding:8px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#24242d;
+    color:var(--text);
+    font:inherit;
+    font-size:11px;
+    cursor:pointer;
+    transition:background .2s,border-color .2s;
+}
+.tool-button:hover{
+    background:#343440;
+}
+.tool-button.active{
+    background:rgba(255,101,132,.15);
+    border-color:var(--pink);
+    color:var(--pink);
+}
+.clear-button:hover{
+    border-color:var(--pink);
+}
+@media(max-width:600px){
+    .editor-actions{margin-left:0}
+    .canvas-label{margin-left:auto}
+}
