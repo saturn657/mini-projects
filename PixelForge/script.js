@@ -84,3 +84,30 @@ clearButton.addEventListener("click", () => {
     });
   }
 });
+const exportButton=document.getElementById("exportButton")
+
+exportButton.addEventListener("click",()=>{
+    const size=32
+    const pixelSize=16
+    const exportCanvas=document.createElement("canvas")
+
+    exportCanvas.width=size*pixelSize
+    exportCanvas.height=size*pixelSize
+
+    const ctx=exportCanvas.getContext("2d")
+    const pixels=document.querySelectorAll(".pixel")
+
+    pixels.forEach((pixel,index)=>{
+        const x=(index%size)*pixelSize
+        const y=Math.floor(index/size)*pixelSize
+        const color=pixel.style.backgroundColor||"#1c1c24"
+
+        ctx.fillStyle=color
+        ctx.fillRect(x,y,pixelSize,pixelSize)
+    })
+
+    const link=document.createElement("a")
+    link.download="pixelforge-artwork.png"
+    link.href=exportCanvas.toDataURL("image/png")
+    link.click()
+})

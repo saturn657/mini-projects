@@ -327,3 +327,12 @@ footer span{
     .editor-actions{margin-left:0}
     .canvas-label{margin-left:auto}
 }
+.export-button{
+    background:linear-gradient(135deg,#ff6584,#8b7cff);
+    border-color:transparent;
+    color:white;
+}
+.export-button:hover{
+    background:linear-gradient(135deg,#ff7c97,#a18aff);
+    border-color:transparent;
+}
