@@ -526,3 +526,24 @@ footer span{
     .navbar{justify-content:space-between}
     .ocean-stats{gap:10px}
 }
+.dynamic-bubble{
+    pointer-events:auto;
+    cursor:pointer;
+    z-index:5;
+    transition:filter .2s ease;
+}
+
+.dynamic-bubble:hover{
+    filter:brightness(1.8);
+}
+
+.dynamic-bubble.popped{
+    animation:popBubble .22s ease-out forwards;
+}
+
+@keyframes popBubble{
+    to{
+        transform:scale(1.8);
+        opacity:0;
+    }
+}
