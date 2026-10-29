@@ -55,3 +55,25 @@ for(let i=0;i<10;i++){
 }
 
 setInterval(createBubble,900)
+const jellyfish=document.querySelectorAll(".jelly")
+
+oceanScene.addEventListener("mousemove",(e)=>{
+    const rect=oceanScene.getBoundingClientRect()
+
+    const x=(e.clientX-rect.left)/rect.width-0.5
+    const y=(e.clientY-rect.top)/rect.height-0.5
+
+    jellyfish.forEach((jelly,index)=>{
+        const speed=(index+1)*5
+
+        jelly.style.setProperty("--move-x",`${x*speed}px`)
+        jelly.style.setProperty("--move-y",`${y*speed}px`)
+    })
+})
+
+oceanScene.addEventListener("mouseleave",()=>{
+    jellyfish.forEach((jelly)=>{
+        jelly.style.setProperty("--move-x","0px")
+        jelly.style.setProperty("--move-y","0px")
+    })
+})

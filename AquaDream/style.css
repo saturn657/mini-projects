@@ -547,3 +547,9 @@ footer span{
         opacity:0;
     }
 }
+.jelly{
+    --move-x:0px;
+    --move-y:0px;
+    translate:var(--move-x) var(--move-y);
+    transition:translate .5s ease-out;
+}
