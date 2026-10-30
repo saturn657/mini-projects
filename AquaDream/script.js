@@ -77,3 +77,14 @@ oceanScene.addEventListener("mouseleave",()=>{
         jelly.style.setProperty("--move-y","0px")
     })
 })
+const timeToggle=document.getElementById("timeToggle")
+
+timeToggle.addEventListener("click",()=>{
+    oceanScene.classList.toggle("night-mode")
+
+    if(oceanScene.classList.contains("night-mode")){
+        timeToggle.textContent="☀️ Enter Day"
+    }else{
+        timeToggle.textContent="🌙 Enter Night"
+    }
+})

@@ -553,3 +553,48 @@ footer span{
     translate:var(--move-x) var(--move-y);
     transition:translate .5s ease-out;
 }
+.ocean-scene{
+    transition:background 1s ease,filter 1s ease;
+}
+
+.time-toggle{
+    position:absolute;
+    top:20px;
+    right:20px;
+    z-index:10;
+    padding:10px 16px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    font:inherit;
+    font-size:12px;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    transition:background .3s,transform .3s;
+}
+
+.time-toggle:hover{
+    background:rgba(255,255,255,.2);
+    transform:translateY(-2px);
+}
+
+.ocean-scene.night-mode{
+    filter:brightness(.65) saturate(1.2);
+}
+
+.ocean-scene.night-mode .moon-glow{
+    opacity:1;
+    filter:brightness(1.5);
+}
+
+.ocean-scene.night-mode .jelly-cap{
+    filter:brightness(1.4);
+}
+
+@media(prefers-reduced-motion:reduce){
+    .ocean-scene,
+    .time-toggle{
+        transition:none;
+    }
+}
