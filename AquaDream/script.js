@@ -88,3 +88,46 @@ timeToggle.addEventListener("click",()=>{
         timeToggle.textContent="🌙 Enter Night"
     }
 })
+const soundToggle=document.getElementById("soundToggle")
+
+let audioContext=null
+let oscillator=null
+let gainNode=null
+
+soundToggle.addEventListener("click",async()=>{
+    if(!audioContext){
+        const AudioContextClass=window.AudioContext||window.webkitAudioContext
+
+        if(!AudioContextClass){
+            soundToggle.textContent="Audio unavailable"
+            return
+        }
+
+        audioContext=new AudioContextClass()
+        oscillator=audioContext.createOscillator()
+        gainNode=audioContext.createGain()
+
+        oscillator.type="sine"
+        oscillator.frequency.value=90
+        gainNode.gain.value=0
+
+        oscillator.connect(gainNode)
+        gainNode.connect(audioContext.destination)
+        oscillator.start()
+    }
+
+    if(audioContext.state==="suspended"){
+        await audioContext.resume()
+    }
+
+    const isPlaying=soundToggle.getAttribute("aria-pressed")==="true"
+
+    gainNode.gain.setTargetAtTime(
+        isPlaying?0:0.015,
+        audioContext.currentTime,
+        0.2
+    )
+
+    soundToggle.setAttribute("aria-pressed",String(!isPlaying))
+    soundToggle.textContent=isPlaying?"🔇 Sound Off":"🔊 Sound On"
+})
