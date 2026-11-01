@@ -131,3 +131,39 @@ soundToggle.addEventListener("click",async()=>{
     soundToggle.setAttribute("aria-pressed",String(!isPlaying))
     soundToggle.textContent=isPlaying?"🔇 Sound Off":"🔊 Sound On"
 })
+const feedButton=document.getElementById("feedButton")
+const feedMessage=document.getElementById("feedMessage")
+const fish=document.querySelectorAll(".fish")
+
+let foodCount=0
+
+feedButton.addEventListener("click",()=>{
+    const rect=oceanScene.getBoundingClientRect()
+
+    const food=document.createElement("div")
+    food.className="food-particle"
+    food.style.left=(rect.width/2-3)+"px"
+    food.style.top=(rect.height*.35)+"px"
+
+    oceanScene.appendChild(food)
+
+    foodCount++
+
+    feedMessage.textContent=`Food dropped: ${foodCount} 🐟`
+
+    fish.forEach((item,index)=>{
+        item.animate(
+            [
+                {translate:"0 0"},
+                {translate:`${index===0?25:-25}px -12px`},
+                {translate:"0 0"}
+            ],
+            {
+                duration:900,
+                easing:"ease-in-out"
+            }
+        )
+    })
+
+    setTimeout(()=>food.remove(),1900)
+})  

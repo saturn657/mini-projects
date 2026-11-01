@@ -624,3 +624,70 @@ footer span{
     outline:2px solid #71f1f2;
     outline-offset:3px;
 }
+.feed-button{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+    padding:11px 20px;
+    border:1px solid rgba(113,241,242,.5);
+    border-radius:30px;
+    background:rgba(6,21,38,.75);
+    color:#fff;
+    font:inherit;
+    font-size:13px;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+}
+
+.feed-button:hover{
+    background:rgba(113,241,242,.2);
+}
+
+.feed-message{
+    position:absolute;
+    bottom:68px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+    width:max-content;
+    max-width:85%;
+    color:#b8f7f5;
+    font-size:12px;
+    text-align:center;
+    pointer-events:none;
+}
+
+.food-particle{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ffd166;
+    box-shadow:0 0 10px rgba(255,209,102,.7);
+    pointer-events:none;
+    z-index:6;
+    animation:foodFall 1.8s ease-in forwards;
+}
+
+@keyframes foodFall{
+    0%{
+        opacity:0;
+        transform:translateY(-15px) scale(.6);
+    }
+    15%{
+        opacity:1;
+    }
+    100%{
+        opacity:.2;
+        transform:translateY(100px) scale(.8);
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .food-particle{
+        animation:none;
+        opacity:.7;
+    }
+}
