@@ -167,3 +167,60 @@ feedButton.addEventListener("click",()=>{
 
     setTimeout(()=>food.remove(),1900)
 })  
+const creatureInfo=document.getElementById("creatureInfo")
+const creatureName=document.getElementById("creatureName")
+const creatureDescription=document.getElementById("creatureDescription")
+const closeInfo=document.getElementById("closeInfo")
+
+const creatureData={
+    "fish-one":{
+        name:"Clownfish",
+        description:"A small, colourful reef fish known for its orange body and white bands. Clownfish often live among sea anemones."
+    },
+    "fish-two":{
+        name:"Blue Tang",
+        description:"A reef fish recognised for its vibrant blue colour and active swimming around coral reefs."
+    },
+    "jelly-one":{
+        name:"Moon Jellyfish",
+        description:"A translucent jellyfish with a gentle drifting motion. Its body is adapted to life in open water."
+    },
+    "jelly-two":{
+        name:"Sea Nettle",
+        description:"A graceful jellyfish with trailing tentacles. Some sea nettle species can deliver a painful sting."
+    },
+    "jelly-three":{
+        name:"Comb Jelly",
+        description:"A soft-bodied marine animal that moves through the water using rows of tiny hair-like structures."
+    }
+}
+
+function showCreature(creature){
+    const type=[...creature.classList].find(name=>creatureData[name])
+
+    if(!type) return
+
+    creatureName.textContent=creatureData[type].name
+    creatureDescription.textContent=creatureData[type].description
+    creatureInfo.classList.add("show")
+}
+
+document.querySelectorAll(".fish,.jelly").forEach(creature=>{
+    creature.setAttribute("tabindex","0")
+    creature.setAttribute("role","button")
+
+    creature.addEventListener("click",()=>{
+        showCreature(creature)
+    })
+
+    creature.addEventListener("keydown",event=>{
+        if(event.key==="Enter"||event.key===" "){
+            event.preventDefault()
+            showCreature(creature)
+        }
+    })
+})
+
+closeInfo.addEventListener("click",()=>{
+    creatureInfo.classList.remove("show")
+})

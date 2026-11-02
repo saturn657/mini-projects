@@ -691,3 +691,71 @@ footer span{
         opacity:.7;
     }
 }
+.creature-info{
+    position:absolute;
+    top:65px;
+    left:20px;
+    z-index:15;
+    width:min(260px,calc(100% - 40px));
+    padding:20px;
+    border:1px solid rgba(113,241,242,.25);
+    border-radius:18px;
+    background:rgba(6,21,38,.82);
+    color:#fff;
+    backdrop-filter:blur(14px);
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:opacity .25s,transform .25s,visibility .25s;
+}
+
+.creature-info.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.info-label{
+    color:#71f1f2;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.creature-info h3{
+    margin:12px 0 8px;
+    font-size:20px;
+}
+
+.creature-info p{
+    margin:0;
+    color:#c2d7e5;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.close-info{
+    position:absolute;
+    top:8px;
+    right:12px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.fish,.jelly{
+    cursor:pointer;
+}
+
+.fish:focus-visible,.jelly:focus-visible{
+    outline:2px solid #71f1f2;
+    outline-offset:5px;
+}
+
+@media(prefers-reduced-motion:reduce){
+    .creature-info{
+        transition:none;
+    }
+}

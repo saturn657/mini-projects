@@ -41,6 +41,27 @@
         </div>
 
         <div class="ocean-scene" aria-label="A dreamy underwater scene">
+          <div
+            class="creature-info"
+            id="creatureInfo"
+            role="status"
+            aria-live="polite"
+          >
+            <button
+              class="close-info"
+              id="closeInfo"
+              type="button"
+              aria-label="Close creature information"
+            >
+              ×
+            </button>
+            <span class="info-label">OCEAN DISCOVERY</span>
+            <h3 id="creatureName">Meet the ocean life</h3>
+            <p id="creatureDescription">
+              Click a fish or jellyfish to discover more about it.
+            </p>
+          </div>
+
           <button class="feed-button" id="feedButton" type="button">
             🐠 Feed the Fish
           </button>
