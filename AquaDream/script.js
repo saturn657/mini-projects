@@ -224,3 +224,20 @@ document.querySelectorAll(".fish,.jelly").forEach(creature=>{
 closeInfo.addEventListener("click",()=>{
     creatureInfo.classList.remove("show")
 })
+oceanScene.addEventListener("click",(event)=>{
+    if(event.target.closest("button,.creature-info,.dynamic-bubble")) return
+
+    const rect=oceanScene.getBoundingClientRect()
+
+    const ripple=document.createElement("span")
+    ripple.className="water-ripple"
+
+    ripple.style.left=(event.clientX-rect.left)+"px"
+    ripple.style.top=(event.clientY-rect.top)+"px"
+
+    oceanScene.appendChild(ripple)
+
+    ripple.addEventListener("animationend",()=>{
+        ripple.remove()
+    })
+})
