@@ -241,3 +241,43 @@ oceanScene.addEventListener("click",(event)=>{
         ripple.remove()
     })
 })
+
+const snapshotButton=document.getElementById("snapshotButton")
+
+snapshotButton.addEventListener("click",async()=>{
+    if(typeof html2canvas==="undefined"){
+        alert("Snapshot library could not load. Check your internet connection.")
+        return
+    }
+
+    snapshotButton.disabled=true
+    snapshotButton.textContent="Capturing..."
+
+    try{
+        const canvas=await html2canvas(oceanScene,{
+            backgroundColor:null,
+            scale:2,
+            useCORS:true,
+            ignoreElements:element=>element.matches(
+                ".snapshot-button,.feed-button,.time-toggle,.sound-toggle,.creature-info"
+            )
+        })
+
+        const link=document.createElement("a")
+        link.download="AquaDream-Snapshot.png"
+        link.href=canvas.toDataURL("image/png")
+        link.click()
+
+        snapshotButton.textContent="✓ Snapshot Saved!"
+    }catch(error){
+        console.error("Snapshot error:",error)
+        alert("Unable to capture aquarium. Please try again.")
+        snapshotButton.textContent="📸 Capture Aquarium"
+    }
+
+    snapshotButton.disabled=false
+
+    setTimeout(()=>{
+        snapshotButton.textContent="📸 Capture Aquarium"
+    },2000)
+})

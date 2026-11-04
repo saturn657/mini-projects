@@ -788,3 +788,30 @@ footer span{
         animation-duration:.01ms;
     }
 }
+
+.snapshot-button{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    z-index:12;
+    padding:11px 17px;
+    border:1px solid rgba(113,241,242,.5);
+    border-radius:30px;
+    background:rgba(6,21,38,.8);
+    color:white;
+    font:inherit;
+    font-size:12px;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    transition:background .3s,transform .3s;
+}
+
+.snapshot-button:hover{
+    background:rgba(113,241,242,.2);
+    transform:translateY(-2px);
+}
+
+.snapshot-button:disabled{
+    opacity:.6;
+    cursor:wait;
+}
