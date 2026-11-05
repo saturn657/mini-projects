@@ -815,3 +815,58 @@ footer span{
     opacity:.6;
     cursor:wait;
 }
+
+.theme-control{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:12;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border:1px solid rgba(113,241,242,.3);
+    border-radius:25px;
+    background:rgba(6,21,38,.8);
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.theme-control label{
+    font-size:11px;
+    white-space:nowrap;
+}
+
+.theme-control select{
+    max-width:125px;
+    padding:5px;
+    border:0;
+    outline:none;
+    background:#102b40;
+    color:white;
+    border-radius:8px;
+    font:inherit;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.ocean-scene.theme-arctic{
+    filter:hue-rotate(15deg) saturate(.8);
+}
+
+.ocean-scene.theme-tropical{
+    filter:hue-rotate(65deg) saturate(1.25);
+}
+
+.ocean-scene.theme-sunset{
+    filter:hue-rotate(150deg) saturate(1.2);
+}
+
+@media(max-width:600px){
+    .theme-control{
+        top:65px;
+        gap:5px;
+        padding:6px 9px;
+    }
+}

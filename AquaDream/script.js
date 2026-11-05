@@ -281,3 +281,17 @@ snapshotButton.addEventListener("click",async()=>{
         snapshotButton.textContent="📸 Capture Aquarium"
     },2000)
 })
+
+const themeSelect=document.getElementById("themeSelect")
+
+const themes=["theme-arctic","theme-tropical","theme-sunset"]
+
+themeSelect.addEventListener("change",()=>{
+    oceanScene.classList.remove(...themes)
+
+    const selected=themeSelect.value
+
+    if(selected!=="deep"){
+        oceanScene.classList.add("theme-"+selected)
+    }
+})
