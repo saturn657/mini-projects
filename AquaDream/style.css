@@ -992,3 +992,137 @@ footer span{
         animation:none;
     }
 }
+
+/* Tablets */
+@media(max-width:900px){
+    .hero{
+        padding-left:30px;
+        padding-right:30px;
+    }
+
+    .ocean-scene{
+        height:420px;
+    }
+
+    .discovery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* Mobile phones */
+@media(max-width:600px){
+    body{
+        overflow-x:hidden;
+    }
+
+    .navbar{
+        padding:16px 18px;
+        gap:12px;
+    }
+
+    .navbar nav{
+        gap:12px;
+    }
+
+    .navbar nav a{
+        font-size:11px;
+    }
+
+    .hero{
+        padding:65px 20px 35px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:clamp(38px,10vw,55px);
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .ocean-scene{
+        width:calc(100% - 24px);
+        height:380px;
+        margin:20px auto;
+        border-radius:20px;
+    }
+
+    .time-toggle,
+    .sound-toggle{
+        top:12px;
+        padding:8px 10px;
+        font-size:10px;
+    }
+
+    .time-toggle{
+        right:10px;
+    }
+
+    .sound-toggle{
+        left:10px;
+    }
+
+    .theme-control{
+        top:55px;
+        max-width:90%;
+    }
+
+    .theme-control label{
+        font-size:10px;
+    }
+
+    .feed-button{
+        bottom:12px;
+        left:12px;
+        transform:none;
+        padding:9px 12px;
+        font-size:10px;
+    }
+
+    .snapshot-button{
+        bottom:12px;
+        right:12px;
+        padding:9px 12px;
+        font-size:10px;
+    }
+
+    .feed-message{
+        bottom:55px;
+        font-size:10px;
+    }
+
+    .creature-info{
+        top:105px;
+        left:10px;
+        width:min(230px,calc(100% - 20px));
+    }
+
+    .coral-garden{
+        height:110px;
+    }
+
+    .discovery-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .discovery-card{
+        padding:20px;
+    }
+}
+
+/* Small phones */
+@media(max-width:380px){
+    .navbar nav a{
+        font-size:10px;
+    }
+
+    .navbar .logo{
+        font-size:17px;
+    }
+
+    .ocean-scene{
+        height:340px;
+    }
+}
