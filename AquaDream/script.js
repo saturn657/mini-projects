@@ -295,3 +295,58 @@ themeSelect.addEventListener("change",()=>{
         oceanScene.classList.add("theme-"+selected)
     }
 })
+
+// Restore saved aquarium preferences
+const savedTheme=localStorage.getItem("aquaTheme")
+const savedMode=localStorage.getItem("aquaNightMode")
+const savedSound=localStorage.getItem("aquaSound")
+
+// Restore ocean theme
+if(savedTheme){
+    themeSelect.value=savedTheme
+    oceanScene.classList.remove(
+        "theme-arctic",
+        "theme-tropical",
+        "theme-sunset"
+    )
+
+    if(savedTheme!=="deep"){
+        oceanScene.classList.add("theme-"+savedTheme)
+    }
+}
+
+// Restore day/night mode
+if(savedMode==="true"){
+    oceanScene.classList.add("night-mode")
+    timeToggle.textContent="☀️ Enter Day"
+}else{
+    oceanScene.classList.remove("night-mode")
+    timeToggle.textContent="🌙 Enter Night"
+}
+
+// Restore sound preference indicator
+// Audio itself requires a fresh user interaction.
+if(savedSound==="true"){
+    soundToggle.textContent="🔊 Resume Sound"
+}
+
+// Save theme whenever it changes
+themeSelect.addEventListener("change",()=>{
+    localStorage.setItem("aquaTheme",themeSelect.value)
+})
+
+// Save day/night preference
+timeToggle.addEventListener("click",()=>{
+    localStorage.setItem(
+        "aquaNightMode",
+        oceanScene.classList.contains("night-mode")
+    )
+})
+
+// Save sound preference
+soundToggle.addEventListener("click",()=>{
+    localStorage.setItem(
+        "aquaSound",
+        soundToggle.getAttribute("aria-pressed")==="true"
+    )
+})
