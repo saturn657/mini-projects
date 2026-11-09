@@ -203,6 +203,7 @@ function showCreature(creature){
     creatureName.textContent=creatureData[type].name
     creatureDescription.textContent=creatureData[type].description
     creatureInfo.classList.add("show")
+    discoverCreature(type)
 }
 
 document.querySelectorAll(".fish,.jelly").forEach(creature=>{
@@ -350,3 +351,74 @@ soundToggle.addEventListener("click",()=>{
         soundToggle.getAttribute("aria-pressed")==="true"
     )
 })
+
+// Ocean Collection
+const creatureIcons={
+    "fish-one":"🐠",
+    "fish-two":"🐟",
+    "jelly-one":"🪼",
+    "jelly-two":"🌊",
+    "jelly-three":"✨"
+}
+
+let discoveredCreatures=[]
+
+try{
+    const saved=JSON.parse(localStorage.getItem("aquaCollection"))
+    if(Array.isArray(saved)){
+        discoveredCreatures=saved
+    }
+}catch(error){
+    discoveredCreatures=[]
+}
+
+function discoverCreature(type){
+    if(discoveredCreatures.includes(type)) return
+
+    discoveredCreatures.push(type)
+
+    localStorage.setItem(
+        "aquaCollection",
+        JSON.stringify(discoveredCreatures)
+    )
+
+    renderCollection()
+}
+
+function renderCollection(){
+    const collectionGrid=document.getElementById("collectionGrid")
+    const progressText=document.getElementById("collectionProgressText")
+    const progressBar=document.getElementById("collectionProgressBar")
+
+    collectionGrid.innerHTML=""
+
+    Object.entries(creatureData).forEach(([key,creature])=>{
+        const unlocked=discoveredCreatures.includes(key)
+
+        const card=document.createElement("article")
+        card.className=unlocked?"collection-card":"collection-card locked"
+
+        const icon=document.createElement("span")
+        icon.className="collection-card-icon"
+        icon.textContent=unlocked?creatureIcons[key]:"?"
+
+        const title=document.createElement("h3")
+        title.textContent=unlocked?creature.name:"Unknown Creature"
+
+        const description=document.createElement("p")
+        description.textContent=unlocked
+            ?creature.description
+            :"Explore the aquarium to discover this creature."
+
+        card.append(icon,title,description)
+        collectionGrid.appendChild(card)
+    })
+
+    const total=Object.keys(creatureData).length
+    const count=discoveredCreatures.length
+
+    progressText.textContent=`${count} of ${total} discovered`
+    progressBar.style.width=`${count/total*100}%`
+}
+
+renderCollection()

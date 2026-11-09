@@ -1126,3 +1126,93 @@ footer span{
         height:340px;
     }
 }
+
+/* Ocean Collection */
+.collection-section{
+    padding:70px 8%;
+    text-align:center;
+}
+
+.collection-heading span{
+    color:#48d9e8;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+.collection-heading h2{
+    font-size:32px;
+    margin:12px 0;
+}
+
+.collection-heading p{
+    color:#a8cbd8;
+}
+
+.collection-progress{
+    max-width:450px;
+    margin:30px auto;
+}
+
+.collection-progress-track{
+    height:8px;
+    background:rgba(255,255,255,.12);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#collectionProgressBar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#32c9df,#70f2c0);
+    border-radius:20px;
+    transition:width .4s ease;
+}
+
+#collectionProgressText{
+    color:#b8dce7;
+    font-size:13px;
+    margin-top:10px;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    margin-top:30px;
+}
+
+.collection-card{
+    padding:25px 18px;
+    border:1px solid rgba(110,220,240,.2);
+    background:rgba(18,75,105,.25);
+    border-radius:18px;
+    transition:transform .3s ease;
+}
+
+.collection-card:hover{
+    transform:translateY(-5px);
+}
+
+.collection-card-icon{
+    font-size:35px;
+}
+
+.collection-card h3{
+    margin:12px 0 8px;
+    color:#e1faff;
+}
+
+.collection-card p{
+    color:#a8cbd8;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.collection-card.locked{
+    opacity:.55;
+    border-style:dashed;
+}
+
+.collection-card.locked .collection-card-icon{
+    font-size:30px;
+}
