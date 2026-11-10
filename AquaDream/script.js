@@ -422,3 +422,68 @@ function renderCollection(){
 }
 
 renderCollection()
+
+// Ocean Explorer Journal
+const journalTitle=document.getElementById("journalTitle")
+const journalEntry=document.getElementById("journalEntry")
+const saveJournal=document.getElementById("saveJournal")
+const journalMessage=document.getElementById("journalMessage")
+const journalEntries=document.getElementById("journalEntries")
+
+let journalData=[]
+
+try{
+    const savedEntries=JSON.parse(localStorage.getItem("aquaJournal"))
+    if(Array.isArray(savedEntries)){
+        journalData=savedEntries
+    }
+}catch(error){
+    journalData=[]
+}
+
+function renderJournal(){
+    journalEntries.innerHTML=""
+
+    journalData.forEach(entry=>{
+        const card=document.createElement("article")
+        card.className="journal-card"
+
+        const title=document.createElement("h3")
+        title.textContent=entry.title
+
+        const description=document.createElement("p")
+        description.textContent=entry.description
+
+        const date=document.createElement("small")
+        date.textContent=entry.date
+
+        card.append(title,description,date)
+        journalEntries.appendChild(card)
+    })
+}
+
+saveJournal.addEventListener("click",()=>{
+    const title=journalTitle.value.trim()
+    const description=journalEntry.value.trim()
+
+    if(!title||!description){
+        journalMessage.textContent="Please fill in both fields."
+        return
+    }
+
+    journalData.unshift({
+        title:title,
+        description:description,
+        date:new Date().toLocaleDateString()
+    })
+
+    localStorage.setItem("aquaJournal",JSON.stringify(journalData))
+
+    journalTitle.value=""
+    journalEntry.value=""
+    journalMessage.textContent="Your discovery has been saved! 🌊"
+
+    renderJournal()
+})
+
+renderJournal()

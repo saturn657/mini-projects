@@ -143,6 +143,32 @@
           </div>
           <div class="sea-floor"></div>
         </div>
+        <section class="journal-section">
+          <div class="journal-heading">
+            <span>YOUR UNDERWATER MEMORIES</span>
+            <h2>Ocean Explorer Journal</h2>
+            <p>Write down the little things you discover beneath the waves.</p>
+          </div>
+
+          <div class="journal-box">
+            <input
+              type="text"
+              id="journalTitle"
+              placeholder="Give your discovery a title..."
+            />
+
+            <textarea
+              id="journalEntry"
+              placeholder="What did you discover today?"
+            ></textarea>
+
+            <button id="saveJournal">Save Entry ✍️</button>
+
+            <p id="journalMessage" aria-live="polite"></p>
+          </div>
+
+          <div class="journal-entries" id="journalEntries"></div>
+        </section>
       </section>
 
       <section class="discover" id="discover">
