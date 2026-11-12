@@ -1,122 +1,99 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <div className="app">
+            <aside className="sidebar">
+                <h2 className="logo">CASE<span>ZERO.</span></h2>
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+                <p className="side-label">INVESTIGATION</p>
+                <nav>
+                    <a className="active">▣ Dashboard</a>
+                    <a>◈ Active Cases</a>
+                    <a>⌕ Evidence Room</a>
+                    <a>♙ Suspects</a>
+                    <a>⌁ Investigation Board</a>
+                </nav>
 
-      <div className="ticks"></div>
+                <div className="agent-card">
+                    <div className="agent-avatar">D</div>
+                    <div>
+                        <strong>Detective</strong>
+                        <small>Lead Investigator</small>
+                    </div>
+                </div>
+            </aside>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+            <main className="main-content">
+                <header className="topbar">
+                    <span>INVESTIGATION DIVISION / DASHBOARD</span>
+                    <span className="status">● SYSTEM ONLINE</span>
+                </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+                <section className="welcome">
+                    <p className="eyebrow">THURSDAY, 12 NOVEMBER 2026</p>
+                    <h1>The truth is<br/><span>buried somewhere.</span></h1>
+                    <p className="subtitle">
+                        Every detail matters. Every suspect has a story.
+                        Your investigation starts here.
+                    </p>
+                </section>
+
+                <section className="stats">
+                    <div className="stat-card">
+                        <small>ACTIVE CASES</small>
+                        <h2>01</h2>
+                    </div>
+                    <div className="stat-card">
+                        <small>EVIDENCE FOUND</small>
+                        <h2>00</h2>
+                    </div>
+                    <div className="stat-card">
+                        <small>PERSONS OF INTEREST</small>
+                        <h2>05</h2>
+                    </div>
+                </section>
+
+                <section className="case-section">
+                    <div className="section-heading">
+                        <div>
+                            <p className="eyebrow">PRIORITY INVESTIGATION</p>
+                            <h2>Recently Assigned Case</h2>
+                        </div>
+                        <span className="case-id">CASE #001</span>
+                    </div>
+
+                    <div className="featured-case">
+                        <div className="case-image">
+                            <span>UNSOLVED MYSTERY</span>
+                        </div>
+
+                        <div className="case-details">
+                            <p className="eyebrow">BLACKWOOD STATION · 11:47 PM</p>
+                            <h2>The Last Train</h2>
+                            <p>
+                                An investigative journalist disappeared
+                                aboard the final train from Blackwood Station.
+                                The train arrived. The journalist did not.
+                            </p>
+                            <div className="case-meta">
+                                <span>◈ 5 SUSPECTS</span>
+                                <span>◈ 12 CLUES</span>
+                                <span className="priority">HIGH PRIORITY</span>
+                            </div>
+                            <button className="investigate-btn">
+                                OPEN CASE <span>↗</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    CASE ZERO <span>·</span> THE TRUTH NEVER DISAPPEARS.
+                </footer>
+            </main>
+        </div>
+    )
 }
 
 export default App
