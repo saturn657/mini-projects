@@ -1,6 +1,14 @@
 import "./App.css"
+import { useState } from "react"
+import CaseDetails from "./components/CaseDetails"
 
 function App() {
+    
+    const [activePage,setActivePage]=useState("dashboard")
+
+if(activePage==="case"){
+    return <CaseDetails onBack={()=>setActivePage("dashboard")}/>
+}
     return (
         <div className="app">
             <aside className="sidebar">
@@ -81,7 +89,8 @@ function App() {
                                 <span>◈ 12 CLUES</span>
                                 <span className="priority">HIGH PRIORITY</span>
                             </div>
-                            <button className="investigate-btn">
+                           
+
                                 OPEN CASE <span>↗</span>
                             </button>
                         </div>
