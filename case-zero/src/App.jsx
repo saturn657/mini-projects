@@ -1,6 +1,7 @@
 import "./App.css"
 import { useState } from "react"
 import CaseDetails from "./components/CaseDetails"
+import EvidenceRoom from "./components/EvidenceRoom"
 
 function App() {
     const [activePage,setActivePage]=useState("dashboard")
@@ -9,18 +10,34 @@ function App() {
         return <CaseDetails onBack={()=>setActivePage("dashboard")}/>
     }
 
+    if(activePage==="evidence"){
+        return <EvidenceRoom onBack={()=>setActivePage("dashboard")}/>
+    }
+
     return (
         <div className="app">
             <aside className="sidebar">
                 <h2 className="logo">CASE<span>ZERO.</span></h2>
 
                 <p className="side-label">INVESTIGATION</p>
-                <nav>
-                    <a className="active">▣ Dashboard</a>
-                    <a>◈ Active Cases</a>
-                    <a>⌕ Evidence Room</a>
-                    <a>♙ Suspects</a>
-                    <a>⌁ Investigation Board</a>
+                <nav aria-label="Investigation navigation">
+                    <button
+                        type="button"
+                        className={activePage==="dashboard" ? "active" : ""}
+                        aria-current={activePage==="dashboard" ? "page" : undefined}
+                        onClick={()=>setActivePage("dashboard")}
+                    >
+                        ▣ Dashboard
+                    </button>
+                    <span className="nav-placeholder">◈ Active Cases</span>
+                    <button
+                        type="button"
+                        onClick={()=>setActivePage("evidence")}
+                    >
+                        ⌕ Evidence Room
+                    </button>
+                    <span className="nav-placeholder">♙ Suspects</span>
+                    <span className="nav-placeholder">⌁ Investigation Board</span>
                 </nav>
 
                 <div className="agent-card">
@@ -54,7 +71,7 @@ function App() {
                     </div>
                     <div className="stat-card">
                         <small>EVIDENCE FOUND</small>
-                        <h2>00</h2>
+                        <h2>03</h2>
                     </div>
                     <div className="stat-card">
                         <small>PERSONS OF INTEREST</small>

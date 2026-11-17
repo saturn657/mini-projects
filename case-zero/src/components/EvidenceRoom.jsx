@@ -24,7 +24,7 @@ function EvidenceRoom({ onBack }) {
         <div className="case-page">
             <header className="case-page-header">
                 <button className="back-btn" onClick={onBack}>
-                    ← BACK TO CASE
+                    ← BACK TO DASHBOARD
                 </button>
                 <span>EVIDENCE ROOM / #001</span>
             </header>
