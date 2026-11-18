@@ -567,3 +567,32 @@ footer span{
         grid-template-columns:1fr;
     }
 }
+
+
+.open-evidence-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-top:24px;
+    padding:13px 18px;
+    border:1px solid #8d3940;
+    border-radius:4px;
+    background:#291a1c;
+    color:#e9c9c9;
+    font:inherit;
+    font-size:10px;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:background .2s,border-color .2s,transform .2s;
+}
+
+.open-evidence-btn:hover{
+    background:#3a2023;
+    border-color:#b54b54;
+    transform:translateY(-1px);
+}
+
+.open-evidence-btn:focus-visible{
+    outline:2px solid #d77979;
+    outline-offset:3px;
+}

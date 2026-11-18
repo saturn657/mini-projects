@@ -7,7 +7,7 @@ function App() {
     const [activePage,setActivePage]=useState("dashboard")
 
     if(activePage==="case"){
-        return <CaseDetails onBack={()=>setActivePage("dashboard")}/>
+        return <CaseDetails onBack={()=>setActivePage("dashboard")} onOpenEvidence={()=>setActivePage("evidence")}/>
     }
 
     if(activePage==="evidence"){

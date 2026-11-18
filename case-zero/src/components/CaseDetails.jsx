@@ -1,4 +1,4 @@
-function CaseDetails({ onBack }) {
+function CaseDetails({ onBack, onOpenEvidence }) {
     return (
         <div className="case-page">
             <header className="case-page-header">
@@ -96,6 +96,14 @@ function CaseDetails({ onBack }) {
                     <span>04</span>
                     <p>Identify the person responsible</p>
                 </div>
+
+                <button
+                    type="button"
+                    className="open-evidence-btn"
+                    onClick={onOpenEvidence}
+                >
+                    OPEN EVIDENCE ROOM <span>↗</span>
+                </button>
             </section>
         </div>
     )
